@@ -1,0 +1,13 @@
+<script src="http://code1.kmf.com/dist/libs/seajs/2.1.0/sea.js" type="text/javascript"></script>
+<script type="text/javascript">
+    seajs.config({
+        base: "/js",
+        alias: {
+            'jquery': 'plugin/jquery.js'
+        },
+        preload:['main']
+    });
+    seajs.use(['main'],function(){
+
+    })
+</script>

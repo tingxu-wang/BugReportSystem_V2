@@ -1,0 +1,132 @@
+//当前项目配置
+{
+	config:{
+	    // 自定义选项
+	    taskOptions: {
+	    	less: false,
+	    	sass: false
+	    },
+	    // 自定义less任务
+		lessTask: {
+			src : "less/channel/**/*.less",
+			dest: "css"
+		},
+		sass: {
+			dist: {
+				files:[{
+					expand:true,
+					cwd:'sass/channel',
+					src:['**/*.scss'],
+					dest:'css/channel',
+					ext:'.css'
+				}]
+			}
+		},
+		cssjoin:{
+			files:{
+				expand : true,
+				cwd    : "css/channel/",
+				src    : "**/*.css",
+				dest   : "./../debug/dist/<%=pkg.name%>/css/channel/"
+			}
+		},
+	
+		concat:{
+			options:{
+				include: 'relative'
+			},
+			files:{
+				expand : true,
+				cwd    : "./../.build/<%=pkg.name%>/js/channel/",
+				src    : "**/*.js",
+				dest   : "./../debug/dist/<%=pkg.name%>/js/channel/"
+			}
+		},
+		
+		cssmin:{
+			cssfiles:{
+				expand : true,
+				cwd    : "./../debug/dist/<%=pkg.name%>/",
+				src    : "**/*.css",
+				dest   : "./../dist/<%=pkg.name%>/"
+			}
+		},
+		clean: {
+			options: {
+				force:true
+			},
+			css : ["./../debug/dist/<%=pkg.name%>/css/channel"],
+			js  : ["./../.build/<%=pkg.name%>/js/channel", "./../debug/dist/<%=pkg.name%>/js/channel"]
+		},
+		uglify:{
+			foo:{
+				files:[{
+					expand:true,
+					cwd:'./../debug/dist/<%=pkg.name%>/js/channel/',
+					src:'**/*.js',
+					dest:"./../dist/<%=pkg.name%>/js/channel/"
+				}]
+			}
+		},
+		secret:grunt.file.readJSON("../secret.json"),
+		sftp:{
+			push:{
+				files:{
+					"dist"   : ["./../dist/<%=pkg.name%>/**"]
+				}
+			},
+			//开发时只上传压缩过的
+			dev:{
+				files:{
+					"dist"   : ["./../dist/<%=pkg.name%>/**"]
+				  , "demo"   : ["./../demo/<%=pkg.name%>/**","!./../demo/<%=pkg.name%>/**/*.fetest.*"]
+				}
+			},
+			demo: {
+				files:{
+					 "demo"   : ["./../demo/<%=pkg.name%>/**","!./../demo/<%=pkg.name%>/**/*.fetest.*"]
+				}
+			},
+			libs:{
+				files:{
+					"dist"   : ["./../dist/libs/**"]
+				}
+			},
+			noimg:{
+				files:{
+					"dist"   : ["./../dist/<%=pkg.name%>/**","!./../dist/<%=pkg.name%>/css/img/**","!./../dist/<%=pkg.name%>/images/**"]
+				}
+			},
+			online: {
+				options : {
+					host:'<%=secret.onlineHost%>',
+					username:'<%=secret.op%>',
+					password:'<%=secret.password%>',
+					path:'<%=secret.path%>/dist'
+				},
+				files:{
+					"dist" : ["./../dist/<%=pkg.name%>/**"]
+				}
+			},
+			options:{
+				path:'<%=secret.testPath%>/dist',
+				host:'<%=secret.host%>',
+				username:'<%=secret.username%>',
+				password:'<%=secret.password%>',
+				port:'<%=secret.port%>',
+				createDirectories:true,
+				readyTimeout:'<%=secret.readyTimeout%>',
+				showProgress:true
+			}
+		}
+	},
+	
+	registerTask:function(){
+		grunt.registerTask("push",["sftp:push"]);
+		grunt.registerTask("online",["build", "sftp:online"]);
+		grunt.registerTask("push-lib",["sftp:libs"]);
+		grunt.registerTask("push-noimg",["sftp:noimg"]);
+		grunt.registerTask("push-dev",["clean", "build", "sftp:dev"]);
+		grunt.registerTask("push-demo",["sftp:demo"]);
+	}
+}
