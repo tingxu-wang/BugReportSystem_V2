@@ -3,11 +3,13 @@
     seajs.config({
         base: "/js",
         alias: {
-            'jquery': 'plugin/jquery.js'
+            'jquery': 'plugin/jquery.js',
+            'vue':'plugin/vue.min.js',
+            'bug_system':'channel/bug_system.js?20161123'
         },
-        preload:['main']
+        preload:['bug_system']
     });
-    seajs.use(['main'],function(){
+    seajs.use(['bug_system'],function(){
 
     })
 </script>

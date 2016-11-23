@@ -5,16 +5,7 @@
   <title>test ejs</title>
 </head>
 <body>
-  <div class="reg">
-    <h1>注册</h1>
-    <form method="post">
-      name: <input type="text" name="name" class="name"><br>
-      age: <input type="text" name="age" class="age"><br>
-      info: <textarea name="info" class="info"></textarea>
-      <div class="errorMsg"></div>
-      <button>register</button>
-    </form>
-  </div>
+  <%- include ../mod/nav %>
 
   <%- include ../mod/loadjs %>
 </body>
