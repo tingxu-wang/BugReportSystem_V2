@@ -22,6 +22,7 @@ mongoDB 3.0.0+
 >$ node bin/www
 
 #####目录结构描述
+```
 ├─bin
 ├─models
 ├─node_modules
@@ -42,3 +43,4 @@ mongoDB 3.0.0+
 └─views
     ├─channel
     └─mod
+```

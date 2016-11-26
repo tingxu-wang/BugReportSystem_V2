@@ -1,11 +1,13 @@
+/*
+  * 加载容器页面 处理ajax请求 操作数据库
+*/
+
 var express = require('express');
 var router = express.Router();
-
-var User=require('../models/user.js')
-
+//var User=require('../models/user.js')
 module.exports=function(app){
   app.get('/',function(req,res,next){
-    res.render('channel/index',{title:'Express',index:'tingxu.wang'})
+    res.render('/src/index')
   })
 
   app.post('/reg',function(req,res){
