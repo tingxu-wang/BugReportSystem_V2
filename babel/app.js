@@ -1,22 +1,17 @@
+'use strict';
+
+var _vue = require('vue');
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _router = require('./router/');
+
+var _router2 = _interopRequireDefault(_router);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 /* 启动文件 */
-/*import Vue from '../node_modules'
-import router from './routes/'*/
-var Vue = require('vue'),
-    router = require('./router');
+var App = {};
+_router2.default.start(App, '#app');
 
-var vm = new Vue({
-  el: '#app',
-  data: {
-    msg: 'test'
-  }
-});
-
-/*if (__DEV__) {
-  console.info('[当前环境] 开发环境')
-  Vue.config.devtools = true
-}
-
-if (__PROD__) {
-  console.info('[当前环境] 生产环境')
-  Vue.config.devtools = false
-}*/
+_vue2.default.config.debug = true;

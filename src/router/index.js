@@ -1,24 +1,13 @@
 /* 路由文件 */
 
-/*import Vue from 'vue'
+import Vue from 'vue'
 import VueRouter from 'vue-router'
-import routesMap from './map/' // 路由映射*/
-var Vue=require('vue'),
-    VueRouter=require('vue-router'),
-    routesMap=require('./map')
+import routesMap from './map/' // 路由映射
 
 Vue.use(VueRouter)
 
-const router = new VueRouter({
-  // root: null,
-  // hashbang: false,
-  // history: true,
-  // saveScrollPosition: true,
-  // transitionOnLoad: true,
-  //suppressTransitionError: __PROD__ // 生产环境下不抛出异常
-})
+const router = new VueRouter()
 
 router.map(routesMap)
 
-//export default router
-module.exports=router
+export default router

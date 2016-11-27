@@ -1,8 +1,18 @@
-module.exports = {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
   '/': {
-    name: 'login',
-    component: {
-      template: '<h1>test</h1>'
-    }
+    /*component (resolve) {
+      // 使用 Webpack 的 Code-Splitting
+      //require(['VIEW/login'], resolve)
+      require(['./login'],resolve)
+    }*/
+    component: require('../../views/login.js')
+    /*    component:{
+          template:'<div>test</div>'
+        }*/
   }
 };

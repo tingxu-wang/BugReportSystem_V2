@@ -1,24 +1,29 @@
-/* 路由文件 */
+'use strict';
 
-/*import Vue from 'vue'
-import VueRouter from 'vue-router'
-import routesMap from './map/' // 路由映射*/
-var Vue = require('vue'),
-    VueRouter = require('vue-router'),
-    routesMap = require('./map');
-
-Vue.use(VueRouter);
-
-const router = new VueRouter({
-  // root: null,
-  // hashbang: false,
-  // history: true,
-  // saveScrollPosition: true,
-  // transitionOnLoad: true,
-  //suppressTransitionError: __PROD__ // 生产环境下不抛出异常
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 
-router.map(routesMap);
+var _vue = require('vue');
 
-//export default router
-module.exports = router;
+var _vue2 = _interopRequireDefault(_vue);
+
+var _vueRouter = require('vue-router');
+
+var _vueRouter2 = _interopRequireDefault(_vueRouter);
+
+var _map = require('./map/');
+
+var _map2 = _interopRequireDefault(_map);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// 路由映射
+
+_vue2.default.use(_vueRouter2.default); /* 路由文件 */
+
+var router = new _vueRouter2.default();
+
+router.map(_map2.default);
+
+exports.default = router;

@@ -15,9 +15,9 @@ var app = express();
 var config=require('./build/config')
 
 // view engine setup
-/*app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-app.use(flash())*/
+//app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
+//app.use(flash())
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -26,8 +26,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
-app.use('/static', express.static(config.commonPath.staticDir));  //静态资源根目录配置
-app.use('/dist', express.static(config.commonPath.dist));
+app.use('/static', express.static(config.staticDir));  //静态资源根目录配置
+app.use('/dist', express.static(config.dist));
 app.use(express.static(path.join(__dirname, 'src')));
 /*app.use('/', index);
 app.use('/users', users);*/

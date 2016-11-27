@@ -1,4 +1,4 @@
-/*! create by tingxu.wang Sat Nov 26 2016 22:14:09 GMT+0800 (中国标准时间) */
+/*! create by tingxu.wang Mon Nov 28 2016 00:57:13 GMT+0800 (中国标准时间) */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -45,28 +45,23 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	var _vue = __webpack_require__(1);
+
+	var _vue2 = _interopRequireDefault(_vue);
+
+	var _router = __webpack_require__(3);
+
+	var _router2 = _interopRequireDefault(_router);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	/* 启动文件 */
-	/*import Vue from '../node_modules'
-	import router from './routes/'*/
-	var Vue = __webpack_require__(1),
-	    router = __webpack_require__(3);
+	var App = {};
+	_router2.default.start(App, '#app');
 
-	var vm = new Vue({
-	  el: '#app',
-	  data: {
-	    msg: 'test'
-	  }
-	});
-
-	/*if (__DEV__) {
-	  console.info('[当前环境] 开发环境')
-	  Vue.config.devtools = true
-	}
-
-	if (__PROD__) {
-	  console.info('[当前环境] 生产环境')
-	  Vue.config.devtools = false
-	}*/
+	_vue2.default.config.debug = true;
 
 /***/ },
 /* 1 */
@@ -10502,30 +10497,35 @@
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* 路由文件 */
+	'use strict';
 
-	/*import Vue from 'vue'
-	import VueRouter from 'vue-router'
-	import routesMap from './map/' // 路由映射*/
-	var Vue = __webpack_require__(1),
-	    VueRouter = __webpack_require__(4),
-	    routesMap = __webpack_require__(5);
-
-	Vue.use(VueRouter);
-
-	const router = new VueRouter({
-	  // root: null,
-	  // hashbang: false,
-	  // history: true,
-	  // saveScrollPosition: true,
-	  // transitionOnLoad: true,
-	  //suppressTransitionError: __PROD__ // 生产环境下不抛出异常
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
 
-	router.map(routesMap);
+	var _vue = __webpack_require__(1);
 
-	//export default router
-	module.exports = router;
+	var _vue2 = _interopRequireDefault(_vue);
+
+	var _vueRouter = __webpack_require__(4);
+
+	var _vueRouter2 = _interopRequireDefault(_vueRouter);
+
+	var _map = __webpack_require__(5);
+
+	var _map2 = _interopRequireDefault(_map);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// 路由映射
+
+	_vue2.default.use(_vueRouter2.default); /* 路由文件 */
+
+	var router = new _vueRouter2.default();
+
+	router.map(_map2.default);
+
+	exports.default = router;
 
 /***/ },
 /* 4 */
@@ -13243,15 +13243,35 @@
 
 /***/ },
 /* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  '/': {
+	    /*component (resolve) {
+	      // 使用 Webpack 的 Code-Splitting
+	      //require(['VIEW/login'], resolve)
+	      require(['./login'],resolve)
+	    }*/
+	    component: __webpack_require__(6)
+	    /*    component:{
+	          template:'<div>test</div>'
+	        }*/
+	  }
+	};
+
+/***/ },
+/* 6 */
 /***/ function(module, exports) {
 
+	"use strict";
+
 	module.exports = {
-	  '/': {
-	    name: 'login',
-	    component: {
-	      template: '<h1>test</h1>'
-	    }
-	  }
+	  template: "\n  <div class=\"\">\n    \u7528\u6237\u540D\uFF1A <input type=\"text\" name=\"\" value=\"\">\n  </div>\n  <div class=\"\">\n    \u5BC6\u7801\uFF1A <input type=\"text\" name=\"\" value=\"\">\n  </div>\n"
 	};
 
 /***/ }

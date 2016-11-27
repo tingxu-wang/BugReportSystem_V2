@@ -2,14 +2,14 @@
 ===========================
 
 
-#####产品介绍
+###### 产品介绍
 企业内部使用的bug管理系统
 
-#####环境依赖
+##### 环境依赖
 node v0.10.28+
 mongoDB 3.0.0+
 
-#####部署步骤
+##### 部署步骤
 1. 命令行进入项目根目录
 
 2. 安装node运行环境
@@ -21,26 +21,29 @@ mongoDB 3.0.0+
 4. 命令行进入项目根目录输入命令以启动服务：
 >$ node bin/www
 
-#####目录结构描述
+##### 目录结构描述
 ```
-├─bin
-├─models
-├─node_modules
-├─public
-│  ├─css
-│  │  ├─channel
-│  │  ├─img
-│  │  │  └─fonts
-│  │  └─mod
-│  ├─dist
-│  ├─images
-│  └─js
-│      ├─channel
-│      ├─mod
-│      │  └─public
-│      └─plugin
-├─routes
+.
+├─babel               # babel编译后的文件夹
+│  ├─router
+│  │  └─map
+│  └─views
+├─bin                 # 运行文件
+├─build               # 用于项目中的公共配置文件
+├─dist                # webpack编译后的文件夹
+├─models              # node数据库操作
+├─routes              # node初始化的路由
+├─src                 # 源代码       
+│  ├─components       # 组件
+│  ├─router           # 路由
+│  │  └─map
+│  ├─services         # 服务（SERVICE，用于统一管理 XHR 请求
+│  └─views            # 路由视图基页（VIEW）
+├─static              # 放置无需经由 Webpack 处理的静态文件
 └─views
-    ├─channel
-    └─mod
+│  ├─channel
+│  └─mod
+├── .babelrc             # Babel 转码配置
+├── .gitignore           # （配置）需被 Git 忽略的文件（夹）
+├── package.json         # （这个就不用多解释了吧）
 ```
