@@ -1,4 +1,4 @@
-/*! create by tingxu.wang Mon Nov 28 2016 21:47:06 GMT+0800 (中国标准时间) */
+/*! create by tingxu.wang Mon Nov 28 2016 22:46:58 GMT+0800 (中国标准时间) */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -55,7 +55,7 @@
 
 	var _router2 = _interopRequireDefault(_router);
 
-	var _App = __webpack_require__(8);
+	var _App = __webpack_require__(13);
 
 	var _App2 = _interopRequireDefault(_App);
 
@@ -13250,9 +13250,15 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	var login = __webpack_require__(6);
+	var log = __webpack_require__(8);
+
 	exports.default = {
 	  '/': {
-	    component: __webpack_require__(6)
+	    component: login
+	  },
+	  'log': {
+	    component: log
 	  }
 	};
 
@@ -13302,7 +13308,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src\\components\\App.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\views\\log.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(12)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13319,7 +13325,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-e4f6270a/App.vue"
+	  var id = "_v-0ff69774/log.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13396,6 +13402,42 @@
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n\n  <navbar></navbar>\n\n  <div class=\"container\">\n    <router-view></router-view>\n  </div>\n\n</div>\n";
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__vue_template__ = __webpack_require__(14)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-e4f6270a/App.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<router-view></router-viwe>\n";
 
 /***/ }
 /******/ ]);

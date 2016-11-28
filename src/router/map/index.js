@@ -1,5 +1,11 @@
+const login=require('../../views/login.vue')
+const log=require('../../views/log.vue')
+
 export default {
   '/':{
-    component:require('../../views/login.vue')
+    component:login
+  },
+  'log':{
+    component:log
   }
 }
