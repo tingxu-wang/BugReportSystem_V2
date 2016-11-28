@@ -1,4 +1,4 @@
-/*! create by tingxu.wang Mon Nov 28 2016 00:57:13 GMT+0800 (中国标准时间) */
+/*! create by tingxu.wang Mon Nov 28 2016 21:47:06 GMT+0800 (中国标准时间) */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -55,11 +55,13 @@
 
 	var _router2 = _interopRequireDefault(_router);
 
+	var _App = __webpack_require__(8);
+
+	var _App2 = _interopRequireDefault(_App);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/* 启动文件 */
-	var App = {};
-	_router2.default.start(App, '#app');
+	_router2.default.start(_App2.default, '#app');
 
 	_vue2.default.config.debug = true;
 
@@ -10517,9 +10519,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// 路由映射
-
-	_vue2.default.use(_vueRouter2.default); /* 路由文件 */
+	_vue2.default.use(_vueRouter2.default);
 
 	var router = new _vueRouter2.default();
 
@@ -13252,27 +13252,150 @@
 	});
 	exports.default = {
 	  '/': {
-	    /*component (resolve) {
-	      // 使用 Webpack 的 Code-Splitting
-	      //require(['VIEW/login'], resolve)
-	      require(['./login'],resolve)
-	    }*/
 	    component: __webpack_require__(6)
-	    /*    component:{
-	          template:'<div>test</div>'
-	        }*/
 	  }
 	};
 
 /***/ },
 /* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__vue_template__ = __webpack_require__(7)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-6dc5f36b/login.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 7 */
 /***/ function(module, exports) {
 
-	"use strict";
+	module.exports = "\n<div class=\"\">\n  用户名： <input type=\"text\" name=\"\" value=\"\">\n</div>\n<div class=\"\">\n  密码2： <input type=\"text\" name=\"\" value=\"\">\n</div>\n";
 
-	module.exports = {
-	  template: "\n  <div class=\"\">\n    \u7528\u6237\u540D\uFF1A <input type=\"text\" name=\"\" value=\"\">\n  </div>\n  <div class=\"\">\n    \u5BC6\u7801\uFF1A <input type=\"text\" name=\"\" value=\"\">\n  </div>\n"
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(9)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\App.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(12)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-e4f6270a/App.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _navbar = __webpack_require__(10);
+
+	var _navbar2 = _interopRequireDefault(_navbar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+	  data: function data() {
+	    return {
+	      test: 'test',
+	      navbar: true
+	    };
+	  },
+	  components: {
+	    'navbar': _navbar2.default
+	  }
 	};
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__vue_template__ = __webpack_require__(11)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-7837e894/navbar.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<h1>navbar</h1>\n<h2>{{ test }}</h2>\n";
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div>\n\n  <navbar></navbar>\n\n  <div class=\"container\">\n    <router-view></router-view>\n  </div>\n\n</div>\n";
 
 /***/ }
 /******/ ]);

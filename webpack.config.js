@@ -1,11 +1,10 @@
 var webpack=require('webpack'),
     path=require('path'),
     commonPath=require('./build/config'),
-    src=commonPath.src,
-    ExtractTextPlugin = require('extract-text-webpack-plugin')
+    src=commonPath.src
 
 module.exports={
-  entry:'./babel/app.js',
+  entry:'./src/app.js',
   output:{
     path:__dirname+'/dist',
     filename:'app.js'
@@ -26,12 +25,10 @@ module.exports={
   module: {
     loaders: [{
       test: /\.vue$/,
-      loader: 'vue',
-      include: src,
-      exclude: /node_modules/
+      loader: 'vue'
     }, {
       test: /\.js$/,
-      loader: 'babel!eslint',
+      loader: 'babel',
       include: src,
       exclude: /node_modules/
     }, {
@@ -54,11 +51,13 @@ module.exports={
   },
   vue: {
     loaders: {
-      js: 'babel!eslint',
-      css: ExtractTextPlugin.extract('vue-style', 'css'),
-      less: ExtractTextPlugin.extract('vue-style', 'css!less'),
-      sass: ExtractTextPlugin.extract('vue-style', 'css!sass')
+        css: 'style!css!autoprefixer',
+        html:'html-loader'
     }
+  },
+  babel: {
+      presets: ['es2015'],
+      plugins: ['transform-runtime']
   },
   plugins:[
     new webpack.BannerPlugin('create by tingxu.wang '+new Date())
