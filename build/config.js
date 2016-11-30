@@ -7,7 +7,8 @@ var commonPath = {
   rootPath: rootPath,
   dist: path.join(rootPath, 'dist'), // build 后输出目录
   indexHTML: path.join(src, 'index.html'), // 入口基页
-  staticDir: path.join(rootPath, 'static') // 无需处理的静态资源目录
+  staticDir: path.join(rootPath, 'static'), // 无需处理的静态资源目录
+  build:path.join(rootPath,'build')//config目录(自己)
 };
 
 /*module.exports={

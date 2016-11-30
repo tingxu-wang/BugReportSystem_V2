@@ -1,3 +1,5 @@
 <template lang="html">
-  <router-view></router-viwe>
+  <div>
+    <router-view></router-viwe>
+  </div>
 </template>

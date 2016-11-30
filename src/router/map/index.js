@@ -1,11 +1,16 @@
-const login=require('../../views/login.vue')
-const log=require('../../views/log.vue')
-
 export default {
-  '/':{
-    component:login
+  '/welcome':{
+    component:require('VIEW/welcome'),
+    subRoutes:{
+      '/login':{
+        component:require('COMPONENT/input/login')
+      },
+      '/register':{
+        component:require('COMPONENT/input/register')
+      }
+    }
   },
-  'log':{
-    component:log
+  '/log':{
+    component:require('VIEW/log')
   }
 }

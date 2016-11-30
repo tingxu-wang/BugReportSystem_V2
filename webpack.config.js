@@ -16,7 +16,9 @@ module.exports={
       ASSET: path.join(src, 'assets'),
       COMPONENT: path.join(src, 'components'),
       SERVICE: path.join(src, 'services'),
-      VIEW: path.join(src, 'views')
+      VIEW: path.join(src, 'views'),
+      STATIC:path.join(src,'static'),
+      BUILD:commonPath.build
     }
   },
   resolveLoader: {

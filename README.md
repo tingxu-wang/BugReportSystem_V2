@@ -19,15 +19,11 @@ mongoDB 3.0.0+
 >$ mongod --dbpath ../bugSystem/    //实例
 
 4. 命令行进入项目根目录输入命令以启动服务：
->$ node bin/www
+>$ grunt
 
 ##### 目录结构描述
 ```
 .
-├─babel               # babel编译后的文件夹
-│  ├─router
-│  │  └─map
-│  └─views
 ├─bin                 # 运行文件
 ├─build               # 用于项目中的公共配置文件
 ├─dist                # webpack编译后的文件夹
@@ -40,9 +36,7 @@ mongoDB 3.0.0+
 │  ├─services         # 服务（SERVICE，用于统一管理 XHR 请求
 │  └─views            # 路由视图基页（VIEW）
 ├─static              # 放置无需经由 Webpack 处理的静态文件
-└─views
-│  ├─channel
-│  └─mod
+└─views               # 主界面
 ├── .babelrc             # Babel 转码配置
 ├── .gitignore           # （配置）需被 Git 忽略的文件（夹）
 ├── package.json         # （这个就不用多解释了吧）
