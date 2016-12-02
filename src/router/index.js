@@ -6,8 +6,13 @@ import routesMap from './map/' // 路由映射
 
 Vue.use(VueRouter)
 
-const router = new VueRouter()
+const router = new VueRouter({
+  hashbang:false
 
-router.map(routesMap)
+})
+
+router.map(routesMap).redirect({
+  '/':'/welcome/login'
+})
 
 export default router

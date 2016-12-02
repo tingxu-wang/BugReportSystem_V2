@@ -4,8 +4,7 @@ mongoose.connect('mongodb://localhost/user')
 
 var userSchema=new mongoose.Schema({
   name:String,
-  age:Number,
-  info:String
+  password:String
 },{
   collection:'users'
 })
@@ -14,8 +13,7 @@ var userModel=mongoose.model('User',userSchema)
 
 function User(user){
   this.name=user.name
-  this.age=user.age
-  this.info=user.info
+  this.password=user.password
 }
 
 module.exports=User
@@ -24,8 +22,7 @@ User.prototype={
   save:function(callback){
     var user={
       name:this.name,
-      age:this.age,
-      info:this.info
+      password:this.password
     }
 
     var newUser=new userModel(user)

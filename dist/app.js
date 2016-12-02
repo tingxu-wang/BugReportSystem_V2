@@ -1,4 +1,4 @@
-/*! create by tingxu.wang Wed Nov 30 2016 23:49:29 GMT+0800 (中国标准时间) */
+/*! create by tingxu.wang Fri Dec 02 2016 19:53:49 GMT+0800 (中国标准时间) */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -55,7 +55,7 @@
 
 	var _router2 = _interopRequireDefault(_router);
 
-	var _App = __webpack_require__(26);
+	var _App = __webpack_require__(27);
 
 	var _App2 = _interopRequireDefault(_App);
 
@@ -10521,9 +10521,14 @@
 
 	_vue2.default.use(_vueRouter2.default);
 
-	var router = new _vueRouter2.default();
+	var router = new _vueRouter2.default({
+	  hashbang: false
 
-	router.map(_map2.default);
+	});
+
+	router.map(_map2.default).redirect({
+	  '/': '/welcome/login'
+	});
 
 	exports.default = router;
 
@@ -13255,7 +13260,7 @@
 	    component: __webpack_require__(6),
 	    subRoutes: {
 	      '/login': {
-	        component: __webpack_require__(9)
+	        component: __webpack_require__(13)
 	      },
 	      '/register': {
 	        component: __webpack_require__(18)
@@ -13263,7 +13268,7 @@
 	    }
 	  },
 	  '/log': {
-	    component: __webpack_require__(21)
+	    component: __webpack_require__(22)
 	  }
 	};
 
@@ -13273,13 +13278,13 @@
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(37)
-	__vue_script__ = __webpack_require__(7)
+	__webpack_require__(7)
+	__vue_script__ = __webpack_require__(11)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\views\\welcome.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(39)
+	__vue_template__ = __webpack_require__(12)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -13305,55 +13310,46 @@
 
 /***/ },
 /* 7 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = {};
-
-/***/ },
-/* 8 */,
-/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_script__, __vue_template__
-	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(14)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src\\components\\input\\login.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(17)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
-	if (__vue_template__) {
-	__vue_options__.template = __vue_template__
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(8);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(10)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-04732864&scoped=true!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./welcome.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-04732864&scoped=true!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./welcome.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
 	}
-	if (!__vue_options__.computed) __vue_options__.computed = {}
-	Object.keys(__vue_styles__).forEach(function (key) {
-	var module = __vue_styles__[key]
-	__vue_options__.computed[key] = function () { return module }
-	})
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-c9e8a35e/login.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
 
 /***/ },
-/* 10 */,
-/* 11 */,
-/* 12 */
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(9)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.bg[_v-04732864]{\n  width:100%;\n  height: 100%;\n  position: absolute;\n  background: url('/static/img/login_bg2.jpg');\n}\n.login_wrap[_v-04732864]{\n  margin-top: 100px;\n  background: rgba(0,0,0,.4);\n  border-radius: 8px;\n  padding:30px;\n  margin-bottom: 40px;\n  color:#fff;\n}\n.rights_wrap[_v-04732864]{\n  color:#fff;\n  text-align: center;\n  margin-top: 150px;\n  position: relative;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 9 */
 /***/ function(module, exports) {
 
 	/*
@@ -13409,7 +13405,7 @@
 
 
 /***/ },
-/* 13 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -13634,6 +13630,58 @@
 
 
 /***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {};
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	module.exports = "\n\n\n<div class=\"bg\" _v-04732864=\"\"></div>\n<div class=\"g-clearfix\" _v-04732864=\"\">\n  <div class=\"login_wrap col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1\" _v-04732864=\"\">\n    <router-view _v-04732864=\"\"></router-view>\n  </div>\n</div>\n<div class=\"rights_wrap\" _v-04732864=\"\">\n  <p _v-04732864=\"\">aaaa</p>\n</div>\n";
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(14)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\welcome\\login.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(17)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-25f44369/login.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
 /* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -13657,6 +13705,9 @@
 	    };
 	  },
 	  methods: {
+	    login: function login() {
+	      if (this.sendUserInfo()) {} else {}
+	    },
 	    sendUserInfo: function sendUserInfo() {
 	      var infoObj = {
 	        name: this.userName,
@@ -13927,7 +13978,7 @@
 /* 17 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<form role=\"form\">\n  <div class=\"form-group\">\n    <h1 class=\"text-center\">welcome</h1>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"userName\">用户名：</label>\n    <input type=\"text\" id=\"userName\" class=\"form-control\" v-model=\"userName\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"disabledSelect\">密码：</label>\n    <input type=\"password\" id=\"userName\" class=\"form-control\" v-model=\"password\">\n  </div>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-default btn-block\">注册</button>\n\n  </div>\n  <div class=\"from-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" @click=\"sendUserInfo\">登录</button>\n  </div>\n</form>\n";
+	module.exports = "\n<form role=\"form\">\n  <div class=\"form-group\">\n    <h1 class=\"text-center\">Login</h1>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"userName\">用户名：</label>\n    <input type=\"text\" id=\"userName\" class=\"form-control\" v-model=\"userName\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"disabledSelect\">密码：</label>\n    <input type=\"password\" id=\"userName\" class=\"form-control\" v-model=\"password\">\n  </div>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-default btn-block\" v-link=\"{path:'/welcome/register'}\">注册</button>\n  </div>\n  <div class=\"from-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" @click=\"login\">登录</button>\n  </div>\n</form>\n";
 
 /***/ },
 /* 18 */
@@ -13939,8 +13990,8 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src\\components\\input\\register.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(20)
+	  console.warn("[vue-loader] src\\components\\welcome\\register.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(21)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -13956,7 +14007,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-dab9062a/register.vue"
+	  var id = "_v-fafc9e5a/register.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13966,33 +14017,86 @@
 
 /***/ },
 /* 19 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = {};
+
+	var _config = __webpack_require__(20);
+
+	exports.default = {
+	  data: function data() {
+	    return {
+	      userName: '',
+	      password: '',
+	      type: '',
+	      message: ''
+	    };
+	  },
+	  methods: {
+	    sendUserInfo: function sendUserInfo() {
+	      var _this = this;
+
+	      if (this.isValid()) {
+	        var infoObj = {
+	          name: this.userName,
+	          password: this.password
+	        };
+	        this.sendAjax(infoObj, function (data) {
+	          if (data.status === 1) {
+	            _this.userName = '';
+	            _this.password = '';
+	            _this.message = '';
+	          } else {
+	            _this.message = data.info;
+	          }
+	        });
+	      } else {
+	        this.message = '请填写全所有的信息';
+	      }
+	    },
+	    sendAjax: function sendAjax(infoObj, fn) {
+	      $.post(_config.rootPath + '/register', infoObj, fn, 'json');
+	    },
+	    isValid: function isValid() {
+	      var valid = !(this.name === '' || this.password === '' || this.type === '');
+	      return valid;
+	    }
+	  }
+	};
 
 /***/ },
 /* 20 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<h1>test</h1>\n";
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var rootPath = exports.rootPath = 'http://localhost:3000';
 
 /***/ },
 /* 21 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<form role=\"form\">\n  <div class=\"form-group\">\n    <h1 class=\"text-center\">Register</h1>\n  </div>\n  <div class=\"form-group\">\n    <label>用户名：</label>\n    <input type=\"text\" class=\"form-control\" v-model=\"userName\">\n  </div>\n  <div class=\"form-group\">\n    <label>密码：</label>\n    <input type=\"password\" class=\"form-control\" v-model=\"password\">\n  </div>\n  <div class=\"form-group\">\n    <label>类别：</label>\n    <select class=\"form-control\" v-model=\"type\">\n      <option value=\"0\">管理员</option>\n      <option value=\"1\">产品经理</option>\n      <option value=\"2\">测试工程师</option>\n      <option value=\"3\">软件工程师</option>\n    </select>\n  </div>\n  <div class=\"form-group\">\n    <p class=\"g-text-red\">{{ message }}</p>\n  </div>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-default btn-block\" v-link=\"{path:'/welcome/login'}\">返回</button>\n  </div>\n  <div class=\"from-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" @click=\"sendUserInfo\">注册</button>\n  </div>\n</form>\n";
+
+/***/ },
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(22)
+	__vue_script__ = __webpack_require__(23)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\views\\log.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(25)
+	__vue_template__ = __webpack_require__(26)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -14017,7 +14121,7 @@
 	})()}
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -14026,7 +14130,7 @@
 	  value: true
 	});
 
-	var _navbar = __webpack_require__(23);
+	var _navbar = __webpack_require__(24);
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
@@ -14045,12 +14149,12 @@
 	};
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_template__ = __webpack_require__(24)
+	__vue_template__ = __webpack_require__(25)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -14075,24 +14179,24 @@
 	})()}
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<h1>navbar</h1>\n<h2>{{ test }}</h2>\n";
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n\n  <navbar></navbar>\n\n  <div class=\"container\">\n    <router-view></router-view>\n  </div>\n\n</div>\n";
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_template__ = __webpack_require__(27)
+	__vue_template__ = __webpack_require__(28)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -14117,65 +14221,10 @@
 	})()}
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n  <router-view></router-viwe>\n</div>\n";
-
-/***/ },
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(38);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(13)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-04732864&scoped=true!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./welcome.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-04732864&scoped=true!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./welcome.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 38 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(12)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n.login_wrap[_v-04732864]{\n  margin-top: 100px;\n  background: rgba(0,0,0,.4);\n  border-radius: 8px;\n  padding:30px;\n  margin-bottom: 40px;\n  color:#fff;\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 39 */
-/***/ function(module, exports) {
-
-	module.exports = "\n\n\n<div class=\"login_wrap col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2\" _v-04732864=\"\">\n  <router-view _v-04732864=\"\"></router-view>\n</div>\n";
 
 /***/ }
 /******/ ]);

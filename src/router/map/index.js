@@ -3,10 +3,10 @@ export default {
     component:require('VIEW/welcome'),
     subRoutes:{
       '/login':{
-        component:require('COMPONENT/input/login')
+        component:require('COMPONENT/welcome/login')
       },
       '/register':{
-        component:require('COMPONENT/input/register')
+        component:require('COMPONENT/welcome/register')
       }
     }
   },

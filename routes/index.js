@@ -4,32 +4,39 @@
 
 var express = require('express');
 var router = express.Router();
-//var User=require('../models/user.js')
+var User=require('../models/user.js')
 module.exports=function(app){
-  app.get('/',function(req,res,next){
+  app.use((req,res,next)=>{
+    res.setHeader('Access-Control-Allow-Origin','*')
+    next()
+  })
+  app.get('/',(req,res,next)=>{
     res.render('/src/index')
   })
 
-  app.post('/reg',function(req,res){
+  app.post('/register',(req,res)=>{
     var user={
       name:req.body.name,
-      age:req.body.age,
-      info:req.body.info
+      password:req.body.password
     }
 
     var newUser=new User(user)
 
-    newUser.get(user.name,function(err,user){
+    newUser.get(user.name,(err,user)=>{
       if(user){
         res.json({
-          status:0//用户已存在
+          status:0,
+          info:'用户已存在'
         })
       }else{
-        newUser.save(function(err,user){
+        newUser.save((err,user)=>{
           if(err){
             console.log(err)
           }
-          res.json({status:1})//用户注册成功
+          res.json({
+            status:1,
+            info:'注册成功'
+          })//用户注册成功
         })
       }
     })

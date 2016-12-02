@@ -33,7 +33,7 @@ mongoDB 3.0.0+
 │  ├─components       # 组件
 │  ├─router           # 路由
 │  │  └─map
-│  ├─services         # 服务（SERVICE，用于统一管理 XHR 请求
+│  ├─services         # 服务（SERVICE，用于统一管理 XHR 请求）
 │  └─views            # 路由视图基页（VIEW）
 ├─static              # 放置无需经由 Webpack 处理的静态文件
 └─views               # 主界面
