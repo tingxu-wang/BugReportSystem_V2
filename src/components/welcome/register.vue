@@ -27,12 +27,12 @@
       <button type="submit" class="btn btn-default btn-block" v-link="{path:'/welcome/login'}">返回</button>
     </div>
     <div class="from-group">
-      <button type="submit" class="btn btn-primary btn-lg btn-block" @click="sendUserInfo">注册</button>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" @click="register">注册</button>
     </div>
   </form>
 </template>
 <script>
-  import {rootPath} from 'SERVICE/config'
+  import {sendAjax} from 'TOOL'
   export default {
     data:function(){
       return {
@@ -43,7 +43,7 @@
       }
     },
     methods:{
-      sendUserInfo:function(){
+      register (){
         const _this=this
 
         if(this.isValid()){
@@ -51,11 +51,11 @@
             name:this.userName,
             password:this.password
           }
-          this.sendAjax(infoObj,function(data){
+          sendAjax('/register',infoObj,function(data){
             if(data.status===1){//注册成功
               _this.userName=''
               _this.password=''
-              _this.message=''
+              _this.message='账号注册成功'
             }else{
               _this.message=data.info
             }
@@ -64,12 +64,8 @@
           this.message='请填写全所有的信息'
         }
       },
-      sendAjax:function(infoObj,fn){
-        $.post(rootPath+'/register',infoObj,fn,'json')
-      },
-      isValid:function(){
-        const valid=!(this.name==='' || this.password==='' || this.type==='')
-        return valid
+      isValid (){
+        return !(this.name==='' || this.password==='' || this.type==='')
       }
     }
   }

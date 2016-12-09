@@ -41,11 +41,33 @@ module.exports=function(app){
       }
     })
   })
+
+  app.post('/login',(req,res)=>{
+    var clientUser={
+      name:req.body.name,
+      password:req.body.password
+    }
+
+    var newUser=new User(clientUser)
+
+    newUser.get(clientUser.name,(err,user)=>{
+      if(user===null){
+        res.json({
+          status:0,
+          info:'用户不存在'
+        })
+      }else if(user.password!==clientUser.password){
+        res.json({
+          status:0,
+          info:'密码输入错误'
+        })
+      }else{
+        res.json({
+          status:1,
+          info:'登录成功',
+          user:user//账号的所有信息
+        })
+      }
+    })
+  })
 }
-
-/* GET home page. */
-/*router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-module.exports = router;*/

@@ -11,6 +11,7 @@ export default {
     }
   },
   '/log':{
+    needToLogin:true,
     component:require('VIEW/log')
   }
 }

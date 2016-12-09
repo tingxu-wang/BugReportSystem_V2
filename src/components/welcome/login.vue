@@ -12,6 +12,9 @@
       <input type="password" id="userName" class="form-control" v-model="password">
     </div>
     <div class="form-group">
+      <p class="g-text-red">{{ message }}</p>
+    </div>
+    <div class="form-group">
       <button type="submit" class="btn btn-default btn-block" v-link="{path:'/welcome/register'}">注册</button>
     </div>
     <div class="from-group">
@@ -20,31 +23,46 @@
   </form>
 </template>
 <script>
-  import commonPath from 'BUILD/config'
+  import {sendAjax} from 'TOOL'
   export default {
-    data:function(){
+    data (){
       return {
         userName:'',
-        password:''
+        password:'',
+        message:''
       }
     },
+/*    computed:{
+      test (){
+        console.log(this.$store)
+        store.dispatch('getUserInfo',{
+          name:'tingxu'
+        })
+      }
+    },*/
     methods:{
-      login:function(){
-        if(this.sendUserInfo()){//验证成功
-
-        }else{//失败
-
+      login (){
+        this.test
+        const _this=this
+        if(this.isValid()){
+          const infoObj={
+            name:this.userName,
+            password:this.password
+          }
+          sendAjax('/login',infoObj,(data)=>{
+            if(data.status===1){
+              _this.$router.go({path:'/log'})
+              _this.$root.userData=data
+            }else{
+              _this.message=data.info
+            }
+          })
+        }else{
+          this.message='请填写全所有的信息'
         }
       },
-      sendUserInfo:function(){
-        const infoObj={
-          name:this.userName,
-          password:this.password
-        }
-        this.sendAjax(infoObj)
-      },
-      sendAjax:function(infoObj){
-        
+      isValid (){
+        return !(this.userName==='' || this.password==='')
       }
     }
   }

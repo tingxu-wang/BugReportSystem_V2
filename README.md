@@ -16,7 +16,7 @@ mongoDB 3.0.0+
 >npm install
 
 3. 安装mongoDB数据库并用命令行工具开启mongo数据库服务，新开启一个命令行cd进入数据库文件夹后指向bugSystem文件夹
->$ mongod --dbpath ../bugSystem/    //实例
+>$ mongod --dbpath ../bugSystem/
 
 4. 命令行进入项目根目录输入命令以启动服务：
 >$ grunt

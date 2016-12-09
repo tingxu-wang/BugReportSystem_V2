@@ -7,8 +7,9 @@
       <router-view></router-view>
     </div>
   </div>
-  <div class="rights_wrap">
-    <p>aaaa</p>
+  <div class="buttom_wrap">
+    <p>ver 2.0.0</p>
+    <p><a href="https://github.com/tingxu-wang/BugReportSystem_V2">fork me on github</a></p>
   </div>
 </template>
 
@@ -31,10 +32,17 @@ export default {
     margin-bottom: 40px;
     color:#fff;
   }
-  .rights_wrap{
+  .buttom_wrap{
     color:#fff;
     text-align: center;
-    margin-top: 150px;
-    position: relative;
+    position:absolute;
+    bottom:40px;
+    left:50%;
+    margin-left: -54px;
+  }
+
+  .buttom_wrap a{
+    color:#fff;
+    text-decoration: underline;
   }
 </style>
