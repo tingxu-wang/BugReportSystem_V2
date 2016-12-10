@@ -20,7 +20,7 @@ module.exports={
       STATIC:path.join(src,'static'),
       BUILD:commonPath.build,
       TOOL:path.join(src,'tools'),
-      STORE:path.join(src,'store')
+      ROUTER:path.join(src,'router')
     }
   },
   resolveLoader: {

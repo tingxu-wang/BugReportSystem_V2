@@ -10,17 +10,26 @@ node v0.10.28+
 mongoDB 3.0.0+
 
 ##### 部署步骤
-1. 命令行进入项目根目录
+1. 安装[node](https://nodejs.org/en/)运行环境
 
-2. 安装node运行环境
+2. 用命令行进入本项目根目录输入以下命令安装项目依赖模块
+>$ npm install
 
-3. 利用npm安装项目依赖模块
->npm install
+3. 安装[mongoDB](https://www.mongodb.com/download-center?jmp=nav#community)数据库
 
-3. 安装mongoDB数据库并用命令行工具开启mongo数据库服务，新开启一个命令行cd进入数据库文件夹后指向bugSystem文件夹
+4. 利用官方向导安装好mongodb后利用命令行到达mongo的根目录下
+>$ cd yourMongoPath
+
+5. 输入以下命令创建项目所需数据库文件夹
+>$ mkdir bugSystem
+
+6. 进入bin目录
+>$ cd bin
+
+7. 命令行工具开启mongo数据库服务，新开启一个命令行cd进入数据库文件夹后指向bugSystem文件夹(此文件夹需要你手动创建)
 >$ mongod --dbpath ../bugSystem/
 
-4. 命令行进入项目根目录输入命令以启动服务：
+8. 新启动一个命令行进入本项目根目录下输入命令以启动服务：
 >$ grunt
 
 ##### 目录结构描述

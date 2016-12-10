@@ -8,15 +8,24 @@ var bodyParser = require('body-parser');
 /*var index = require('./routes/index');
 var users = require('./routes/users');*/
 var router=require('./routes/index')
-var flash=require('connect-flash')
+//var flash=require('connect-flash')
 
 var app = express();
 
 var config=require('./build/config')
 
+var dirname=__dirname.toLowerCase()
+
+var cons=require('consolidate')
+
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'html');
+
+app.engine('html',cons.swig)
+app.set('views', path.join(__dirname, 'src'))
+app.set('view engine','html')
+
 //app.use(flash())
 
 // uncomment after placing your favicon in /public
@@ -28,7 +37,7 @@ app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
 app.use('/static', express.static(config.staticDir));  //静态资源根目录配置
 app.use('/dist', express.static(config.dist));
-app.use(express.static(path.join(__dirname, 'src')));
+app.use(express.static(path.join(dirname, 'src')));
 /*app.use('/', index);
 app.use('/users', users);*/
 router(app)

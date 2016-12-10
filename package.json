@@ -4,33 +4,35 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "build":"babel src --watch --out-dir babel"
+    "build": "babel src --watch --out-dir babel"
   },
   "dependencies": {
     "body-parser": "~1.15.2",
+    "connect-flash": "0.1.1",
+    "consolidate": "^0.14.5",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "ejs": "~2.5.2",
     "express": "~4.14.0",
-    "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0",
-    "connect-flash":"0.1.1",
-    "mongoose":"*",
     "grunt": "~0.4.2",
     "grunt-contrib-watch": "~0.5.3",
-    "load-grunt-tasks": "~0.3.0",
     "grunt-express-server": "~0.4.11",
+    "load-grunt-tasks": "~0.3.0",
+    "mongoose": "*",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0",
+    "swig": "^1.4.2",
     "vue": "^1.0.18",
     "vue-resource": "^0.6.1",
     "vue-router": "^0.7.11"
   },
-  "devDependencies":{
+  "devDependencies": {
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.2.0",
     "vue-loader": "^8.0.0",
     "vue-style-loader": "^1.0.0",
-    "vuex":"^2.0.0",
-    "css-loader": "^0.23.0",
+    "vuex": "^2.0.0",
+    "css-loader": "^0.16.0",
     "babel": "^4.6.0",
     "babel-core": "^6.3.21",
     "babel-cli": "^6.0.0",
@@ -43,9 +45,7 @@
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0",
-
     "autoprefixer-loader": "^2.0.0",
-    "css-loader": "^0.16.0",
     "file-loader": "^0.8.5",
     "html-loader": "^0.3.0",
     "node-sass": "^3.4.2",
@@ -53,7 +53,6 @@
     "style-loader": "^0.12.3",
     "url-loader": "^0.5.6",
     "webpack-dev-server": "^1.14.0",
-
     "extract-text-webpack-plugin": "^0.9.1"
   }
 }

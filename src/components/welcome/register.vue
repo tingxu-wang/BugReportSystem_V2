@@ -18,6 +18,7 @@
         <option value="1">产品经理</option>
         <option value="2">测试工程师</option>
         <option value="3">软件工程师</option>
+        <option value="4">用户</option>
       </select>
     </div>
     <div class="form-group">
@@ -49,12 +50,14 @@
         if(this.isValid()){
           const infoObj={
             name:this.userName,
-            password:this.password
+            password:this.password,
+            type:this.type
           }
           sendAjax('/register',infoObj,function(data){
             if(data.status===1){//注册成功
               _this.userName=''
               _this.password=''
+              _this.type=''
               _this.message='账号注册成功'
             }else{
               _this.message=data.info

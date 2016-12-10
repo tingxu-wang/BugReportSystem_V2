@@ -9,7 +9,13 @@
   export default {
     data (){
       return {
-        userData:null
+        //userData:null
+        userData:{//测试用数据
+          name:'pm',
+          password:'qwaa1234',
+          type:1,
+          id:'58413027b023330d709f99b4'
+        }
       }
     }
   }

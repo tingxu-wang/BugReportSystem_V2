@@ -17,7 +17,8 @@ module.exports=function(app){
   app.post('/register',(req,res)=>{
     var user={
       name:req.body.name,
-      password:req.body.password
+      password:req.body.password,
+      type:req.body.type
     }
 
     var newUser=new User(user)
@@ -65,7 +66,11 @@ module.exports=function(app){
         res.json({
           status:1,
           info:'登录成功',
-          user:user//账号的所有信息
+          //user:user//账号的所有信息
+          type:user.type,
+          id:user._id,
+          name:user.name,
+          password:user.password
         })
       }
     })
