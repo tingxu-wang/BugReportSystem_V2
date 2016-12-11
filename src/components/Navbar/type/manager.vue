@@ -1,5 +1,5 @@
 <template lang="html">
-  <li class="active"><a href="#">项目管理</a></li>
+  <li class="active"><a v-link="{name:'prjManage',append:true}">项目管理</a></li>
   <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">账号管理<span class="caret"></span></a>
     <ul class="dropdown-menu" role="menu">

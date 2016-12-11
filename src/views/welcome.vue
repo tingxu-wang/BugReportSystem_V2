@@ -1,28 +1,11 @@
 <!-- 登录以及注册页面的入口组件 -->
-
-<template lang="html">
-  <div class="bg"></div>
-  <div class="g-clearfix">
-    <div class="login_wrap col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
-      <router-view></router-view>
-    </div>
-  </div>
-  <div class="buttom_wrap">
-    <p>ver 2.0.0</p>
-    <p><a href="https://github.com/tingxu-wang/BugReportSystem_V2">fork me on github</a></p>
-  </div>
-</template>
-
-<script>
-export default {
-}
-</script>
 <style scoped>
   .bg{
     width:100%;
     height: 100%;
     position: absolute;
     background: url('/static/img/login_bg2.jpg');
+    z-index: 0;
   }
   .login_wrap{
     margin-top: 100px;
@@ -46,3 +29,20 @@ export default {
     text-decoration: underline;
   }
 </style>
+<template lang="html">
+  <div class="bg"></div>
+  <div class="g-clearfix">
+    <div class="login_wrap col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
+      <router-view></router-view>
+    </div>
+  </div>
+  <div class="buttom_wrap">
+    <p>ver 2.0.0</p>
+    <p><a href="https://github.com/tingxu-wang/BugReportSystem_V2">fork me on github</a></p>
+  </div>
+</template>
+
+<script>
+export default {
+}
+</script>

@@ -15,6 +15,8 @@ module.exports={
       // 自定义路径别名
       ASSET: path.join(src, 'assets'),
       COMPONENT: path.join(src, 'components'),
+      CONTENT: path.join(src,'components/content'),
+      WELCOME:path.join(src,'components/welcome'),
       SERVICE: path.join(src, 'services'),
       VIEW: path.join(src, 'views'),
       STATIC:path.join(src,'static'),

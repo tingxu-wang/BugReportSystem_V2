@@ -25,7 +25,7 @@
       <p class="g-text-red">{{ message }}</p>
     </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-default btn-block" v-link="{path:'/welcome/login'}">返回</button>
+      <button type="submit" class="btn btn-default btn-block" v-link="{name:'login'}">返回</button>
     </div>
     <div class="from-group">
       <button type="submit" class="btn btn-primary btn-lg btn-block" @click="register">注册</button>

@@ -3,15 +3,24 @@ export default {
     component:require('VIEW/welcome'),
     subRoutes:{
       '/login':{
-        component:require('COMPONENT/welcome/login')
+        name:'login',
+        component:require('WELCOME/login')
       },
       '/register':{
-        component:require('COMPONENT/welcome/register')
+        name:'register',
+        component:require('WELCOME/register')
       }
     }
   },
   '/log':{
+    name:'log',
     needToLogin:true,
-    component:require('VIEW/log')
+    component:require('VIEW/log'),
+    subRoutes:{
+      '/prjManage':{
+        name:'prjManage',
+        component:require('CONTENT/prjManage')
+      }
+    }
   }
 }

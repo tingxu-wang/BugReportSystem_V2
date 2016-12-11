@@ -11,9 +11,9 @@
       return {
         //userData:null
         userData:{//测试用数据
-          name:'pm',
+          name:'manager',
           password:'qwaa1234',
-          type:1,
+          type:0,
           id:'58413027b023330d709f99b4'
         }
       }

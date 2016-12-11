@@ -1,4 +1,4 @@
-/*! create by tingxu.wang Sat Dec 10 2016 21:29:10 GMT+0800 (中国标准时间) */
+/*! create by tingxu.wang Sun Dec 11 2016 22:39:51 GMT+0800 (中国标准时间) */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -55,7 +55,7 @@
 
 	var _router2 = _interopRequireDefault(_router);
 
-	var _App = __webpack_require__(34);
+	var _App = __webpack_require__(42);
 
 	var _App2 = _interopRequireDefault(_App);
 
@@ -13259,16 +13259,25 @@
 	    component: __webpack_require__(6),
 	    subRoutes: {
 	      '/login': {
+	        name: 'login',
 	        component: __webpack_require__(13)
 	      },
 	      '/register': {
+	        name: 'register',
 	        component: __webpack_require__(18)
 	      }
 	    }
 	  },
 	  '/log': {
+	    name: 'log',
 	    needToLogin: true,
-	    component: __webpack_require__(21)
+	    component: __webpack_require__(21),
+	    subRoutes: {
+	      '/prjManage': {
+	        name: 'prjManage',
+	        component: __webpack_require__(37)
+	      }
+	    }
 	  }
 	};
 
@@ -13343,7 +13352,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.bg[_v-04732864]{\n  width:100%;\n  height: 100%;\n  position: absolute;\n  background: url('/static/img/login_bg2.jpg');\n}\n.login_wrap[_v-04732864]{\n  margin-top: 100px;\n  background: rgba(0,0,0,.4);\n  border-radius: 8px;\n  padding:30px;\n  margin-bottom: 40px;\n  color:#fff;\n}\n.buttom_wrap[_v-04732864]{\n  color:#fff;\n  text-align: center;\n  position:absolute;\n  bottom:40px;\n  left:50%;\n  margin-left: -54px;\n}\n\n.buttom_wrap a[_v-04732864]{\n  color:#fff;\n  text-decoration: underline;\n}\n", ""]);
+	exports.push([module.id, "\n\n.bg[_v-04732864]{\n  width:100%;\n  height: 100%;\n  position: absolute;\n  background: url('/static/img/login_bg2.jpg');\n  z-index: 0;\n}\n.login_wrap[_v-04732864]{\n  margin-top: 100px;\n  background: rgba(0,0,0,.4);\n  border-radius: 8px;\n  padding:30px;\n  margin-bottom: 40px;\n  color:#fff;\n}\n.buttom_wrap[_v-04732864]{\n  color:#fff;\n  text-align: center;\n  position:absolute;\n  bottom:40px;\n  left:50%;\n  margin-left: -54px;\n}\n\n.buttom_wrap a[_v-04732864]{\n  color:#fff;\n  text-decoration: underline;\n}\n", ""]);
 
 	// exports
 
@@ -13644,7 +13653,7 @@
 /* 12 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n<div class=\"bg\" _v-04732864=\"\"></div>\n<div class=\"g-clearfix\" _v-04732864=\"\">\n  <div class=\"login_wrap col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1\" _v-04732864=\"\">\n    <router-view _v-04732864=\"\"></router-view>\n  </div>\n</div>\n<div class=\"buttom_wrap\" _v-04732864=\"\">\n  <p _v-04732864=\"\">ver 2.0.0</p>\n  <p _v-04732864=\"\"><a href=\"https://github.com/tingxu-wang/BugReportSystem_V2\" _v-04732864=\"\">fork me on github</a></p>\n</div>\n";
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<div class=\"bg\" _v-04732864=\"\"></div>\n<div class=\"g-clearfix\" _v-04732864=\"\">\n  <div class=\"login_wrap col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1\" _v-04732864=\"\">\n    <router-view _v-04732864=\"\"></router-view>\n  </div>\n</div>\n<div class=\"buttom_wrap\" _v-04732864=\"\">\n  <p _v-04732864=\"\">ver 2.0.0</p>\n  <p _v-04732864=\"\"><a href=\"https://github.com/tingxu-wang/BugReportSystem_V2\" _v-04732864=\"\">fork me on github</a></p>\n</div>\n";
 
 /***/ },
 /* 13 */
@@ -13791,7 +13800,7 @@
 /* 17 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<form role=\"form\">\n  <div class=\"form-group\">\n    <h1 class=\"text-center\">Login</h1>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"userName\">用户名：</label>\n    <input type=\"text\" id=\"userName\" class=\"form-control\" v-model=\"userName\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"disabledSelect\">密码：</label>\n    <input type=\"password\" id=\"userName\" class=\"form-control\" v-model=\"password\">\n  </div>\n  <div class=\"form-group\">\n    <p class=\"g-text-red\">{{ message }}</p>\n  </div>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-default btn-block\" v-link=\"{path:'/welcome/register'}\">注册</button>\n  </div>\n  <div class=\"from-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" @click=\"login\">登录</button>\n  </div>\n</form>\n";
+	module.exports = "\n<form role=\"form\">\n  <div class=\"form-group\">\n    <h1 class=\"text-center\">Login</h1>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"userName\">用户名：</label>\n    <input type=\"text\" id=\"userName\" class=\"form-control\" v-model=\"userName\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"disabledSelect\">密码：</label>\n    <input type=\"password\" id=\"userName\" class=\"form-control\" v-model=\"password\">\n  </div>\n  <div class=\"form-group\">\n    <p class=\"g-text-red\">{{ message }}</p>\n  </div>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-default btn-block\" v-link=\"{name:'register'}\">注册</button>\n  </div>\n  <div class=\"from-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" @click=\"login\">登录</button>\n  </div>\n</form>\n";
 
 /***/ },
 /* 18 */
@@ -13883,7 +13892,7 @@
 /* 20 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<form role=\"form\">\n  <div class=\"form-group\">\n    <h1 class=\"text-center\">Register</h1>\n  </div>\n  <div class=\"form-group\">\n    <label>用户名：</label>\n    <input type=\"text\" class=\"form-control\" v-model=\"userName\">\n  </div>\n  <div class=\"form-group\">\n    <label>密码：</label>\n    <input type=\"password\" class=\"form-control\" v-model=\"password\">\n  </div>\n  <div class=\"form-group\">\n    <label>类别：</label>\n    <select class=\"form-control\" v-model=\"type\">\n      <option value=\"0\">管理员</option>\n      <option value=\"1\">产品经理</option>\n      <option value=\"2\">测试工程师</option>\n      <option value=\"3\">软件工程师</option>\n      <option value=\"4\">用户</option>\n    </select>\n  </div>\n  <div class=\"form-group\">\n    <p class=\"g-text-red\">{{ message }}</p>\n  </div>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-default btn-block\" v-link=\"{path:'/welcome/login'}\">返回</button>\n  </div>\n  <div class=\"from-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" @click=\"register\">注册</button>\n  </div>\n</form>\n";
+	module.exports = "\n<form role=\"form\">\n  <div class=\"form-group\">\n    <h1 class=\"text-center\">Register</h1>\n  </div>\n  <div class=\"form-group\">\n    <label>用户名：</label>\n    <input type=\"text\" class=\"form-control\" v-model=\"userName\">\n  </div>\n  <div class=\"form-group\">\n    <label>密码：</label>\n    <input type=\"password\" class=\"form-control\" v-model=\"password\">\n  </div>\n  <div class=\"form-group\">\n    <label>类别：</label>\n    <select class=\"form-control\" v-model=\"type\">\n      <option value=\"0\">管理员</option>\n      <option value=\"1\">产品经理</option>\n      <option value=\"2\">测试工程师</option>\n      <option value=\"3\">软件工程师</option>\n      <option value=\"4\">用户</option>\n    </select>\n  </div>\n  <div class=\"form-group\">\n    <p class=\"g-text-red\">{{ message }}</p>\n  </div>\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-default btn-block\" v-link=\"{name:'login'}\">返回</button>\n  </div>\n  <div class=\"from-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" @click=\"register\">注册</button>\n  </div>\n</form>\n";
 
 /***/ },
 /* 21 */
@@ -13891,12 +13900,13 @@
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(22)
+	__webpack_require__(22)
+	__vue_script__ = __webpack_require__(24)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\views\\log.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(33)
+	__vue_template__ = __webpack_require__(36)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -13924,13 +13934,53 @@
 /* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(23);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(10)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0ff69774&scoped=true!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./log.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0ff69774&scoped=true!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./log.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(9)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n.bg[_v-0ff69774]{\n  width:100%;\n  height: 100%;\n  position: absolute;\n  background: #f6f7f7;\n}\nnav.navbar[_v-0ff69774]{\n  box-shadow: 2px 2px 5px rgba(0,0,0,0.06);\n}\n.main-content[_v-0ff69774]{\n  background: #fff;\n  box-shadow: 2px 4px 4px rgba(0,0,0,0.04);\n}\n@media (max-width: 768px){\n  .main-content[_v-0ff69774]{\n    margin-top: -20px;\n  }\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
-	var _navbar = __webpack_require__(23);
+	var _navbar = __webpack_require__(25);
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
@@ -13949,17 +13999,17 @@
 	};
 
 /***/ },
-/* 23 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(24)
+	__vue_script__ = __webpack_require__(26)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\Navbar\\navbar.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(32)
+	__vue_template__ = __webpack_require__(35)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -13984,7 +14034,7 @@
 	})()}
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13995,23 +14045,23 @@
 
 	var _TOOL = __webpack_require__(15);
 
-	var _manager = __webpack_require__(25);
+	var _manager = __webpack_require__(27);
 
 	var _manager2 = _interopRequireDefault(_manager);
 
-	var _pm = __webpack_require__(27);
+	var _pm = __webpack_require__(29);
 
 	var _pm2 = _interopRequireDefault(_pm);
 
-	var _tester = __webpack_require__(29);
+	var _tester = __webpack_require__(31);
 
 	var _tester2 = _interopRequireDefault(_tester);
 
-	var _programer = __webpack_require__(30);
+	var _programer = __webpack_require__(32);
 
 	var _programer2 = _interopRequireDefault(_programer);
 
-	var _user = __webpack_require__(31);
+	var _user = __webpack_require__(33);
 
 	var _user2 = _interopRequireDefault(_user);
 
@@ -14033,12 +14083,12 @@
 	};
 
 /***/ },
-/* 25 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_template__ = __webpack_require__(26)
+	__vue_template__ = __webpack_require__(28)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -14063,18 +14113,18 @@
 	})()}
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<li class=\"active\"><a href=\"#\">项目管理</a></li>\n<li class=\"dropdown\">\n  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">账号管理<span class=\"caret\"></span></a>\n  <ul class=\"dropdown-menu\" role=\"menu\">\n    <li><a href=\"#\">账号创建</a></li>\n    <li><a href=\"#\">账号删除</a></li>\n  </ul>\n</li>\n<li><a href=\"#\">人员信息一览</a></li>\n";
+	module.exports = "\n<li class=\"active\"><a v-link=\"{name:'prjManage',append:true}\">项目管理</a></li>\n<li class=\"dropdown\">\n  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">账号管理<span class=\"caret\"></span></a>\n  <ul class=\"dropdown-menu\" role=\"menu\">\n    <li><a href=\"#\">账号创建</a></li>\n    <li><a href=\"#\">账号删除</a></li>\n  </ul>\n</li>\n<li><a href=\"#\">人员信息一览</a></li>\n";
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_template__ = __webpack_require__(28)
+	__vue_template__ = __webpack_require__(30)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -14099,56 +14149,56 @@
 	})()}
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<li class=\"active\"><a href=\"#\">我的团队</a></li>\n<li class=\"dropdown\">\n  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">我的项目<span class=\"caret\"></span></a>\n  <ul class=\"dropdown-menu\" role=\"menu\">\n    <li><a href=\"#\">创建项目</a></li>\n    <li><a href=\"#\">删除项目</a></li>\n    <li><a href=\"#\">项目总览</a></li>\n  </ul>\n</li>\n";
 
 /***/ },
-/* 29 */
-/***/ function(module, exports) {
-
-	var __vue_script__, __vue_template__
-	var __vue_styles__ = {}
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
-	if (__vue_template__) {
-	__vue_options__.template = __vue_template__
-	}
-	if (!__vue_options__.computed) __vue_options__.computed = {}
-	Object.keys(__vue_styles__).forEach(function (key) {
-	var module = __vue_styles__[key]
-	__vue_options__.computed[key] = function () { return module }
-	})
-
-
-/***/ },
-/* 30 */
-/***/ function(module, exports) {
-
-	var __vue_script__, __vue_template__
-	var __vue_styles__ = {}
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
-	if (__vue_template__) {
-	__vue_options__.template = __vue_template__
-	}
-	if (!__vue_options__.computed) __vue_options__.computed = {}
-	Object.keys(__vue_styles__).forEach(function (key) {
-	var module = __vue_styles__[key]
-	__vue_options__.computed[key] = function () { return module }
-	})
-
-
-/***/ },
 /* 31 */
+/***/ function(module, exports) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+
+
+/***/ },
+/* 32 */
+/***/ function(module, exports) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+
+
+/***/ },
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_template__ = __webpack_require__(37)
+	__vue_template__ = __webpack_require__(34)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -14173,29 +14223,89 @@
 	})()}
 
 /***/ },
-/* 32 */
+/* 34 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<li class=\"active\"><a href=\"#\">项目明细</a></li>\n";
+
+/***/ },
+/* 35 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<nav class=\"navbar navbar-default\" role=\"navigation\">\n  <div class=\"container\">\n    <!-- Brand and toggle get grouped for better mobile display -->\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar-collapse\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">bug system</a>\n    </div>\n\n    <!-- Collect the nav links, forms, and other content for toggling -->\n    <div class=\"collapse navbar-collapse\" id=\"navbar-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <template v-if=\"idendity==='manager'\">\n          <manager><manager/>\n        </template>\n        <template v-if=\"idendity==='pm'\">\n          <pm><pm/>\n        </template>\n        <template v-if=\"idendity==='tster'\">\n          <pm><pm/>\n        </template>\n        <template v-if=\"idendity==='programer'\">\n          <pm><pm/>\n        </template>\n        <template v-if=\"idendity==='user'\">\n          <pm><pm/>\n        </template>\n      </ul>\n\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a href=\"#\">消息</a></li>\n        <li class=\"dropdown\">\n          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">{{ $root.userData.name }}<span class=\"caret\"></span></a>\n          <ul class=\"dropdown-menu\" role=\"menu\">\n            <li><a href=\"#\">账号设置</a></li>\n            <li class=\"divider\"></li>\n            <li><a href=\"#\">注销</a></li>\n          </ul>\n        </li>\n      </ul>\n    </div><!-- /.navbar-collapse -->\n  </div><!-- /.container-fluid -->\n</nav>\n";
 
 /***/ },
-/* 33 */
+/* 36 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div>\n\n  <navbar></navbar>\n\n  <div class=\"container\">\n    <router-view></router-view>\n  </div>\n\n</div>\n";
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<div class=\"bg\" _v-0ff69774=\"\">\n  <navbar _v-0ff69774=\"\"></navbar>\n\n  <div class=\"container main-content\" _v-0ff69774=\"\">\n    <router-view _v-0ff69774=\"\"></router-view>\n  </div>\n</div>\n";
 
 /***/ },
-/* 34 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(35)
+	__vue_script__ = __webpack_require__(40)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\content\\prjManage.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(41)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-53f92104/prjManage.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 38 */,
+/* 39 */,
+/* 40 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {};
+
+/***/ },
+/* 41 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<h1>test prjManage</h1>\n";
+
+/***/ },
+/* 42 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(43)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\App.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(36)
+	__vue_template__ = __webpack_require__(44)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -14220,7 +14330,7 @@
 	})()}
 
 /***/ },
-/* 35 */
+/* 43 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -14232,9 +14342,9 @@
 	  data: function data() {
 	    return {
 	      userData: {
-	        name: 'pm',
+	        name: 'manager',
 	        password: 'qwaa1234',
-	        type: 1,
+	        type: 0,
 	        id: '58413027b023330d709f99b4'
 	      }
 	    };
@@ -14242,16 +14352,10 @@
 	};
 
 /***/ },
-/* 36 */
+/* 44 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>\n  <router-view></router-viwe>\n</div>\n";
-
-/***/ },
-/* 37 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<li class=\"active\"><a href=\"#\">项目明细</a></li>\n";
 
 /***/ }
 /******/ ]);
